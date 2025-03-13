@@ -1,0 +1,37 @@
+{
+    "name": "harrisonratcliffe/ip-api",
+    "description": "A simple Laravel package to get IP address information from ip-api.com",
+    "type": "library",
+    "keywords": ["ip-api.com", "ip api laravel", "ip api php", "ip api"],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "illuminate/support": ">=7.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.9",
+        "orchestra/testbench": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Harrisonratcliffe\\IpApiLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Harrisonratcliffe\\IpApiLaravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Harrisonratcliffe\\IpApiLaravel\\IpApiLaravelServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
