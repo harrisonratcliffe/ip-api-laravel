@@ -10,8 +10,8 @@ class IpApiLaravelServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/ip-api.php' => config_path('ip-api.php'),
-        ], 'ip-api-config');
+            __DIR__.'/../config/ip-api-laravel.php' => config_path('ip-api-laravel.php'),
+        ], 'ip-api-laravel-config');
     }
 
     public function register(): void

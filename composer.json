@@ -1,5 +1,5 @@
 {
-    "name": "harrisonratcliffe/ip-api",
+    "name": "harrisonratcliffe/ip-api-laravel",
     "description": "A simple Laravel package to get IP address information from ip-api.com",
     "type": "library",
     "keywords": ["ip-api.com", "ip api laravel", "ip api php", "ip api"],

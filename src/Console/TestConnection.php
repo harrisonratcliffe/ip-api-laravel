@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 
 class TestConnection extends Command
 {
-    protected $signature = 'ip-api:connection 
+    protected $signature = 'ip-api-laravel:connection 
                             {ip? : The IP address to test with}';
 
     protected $description = 'Test connection to ip-api.com';
