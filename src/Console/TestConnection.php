@@ -2,8 +2,8 @@
 
 namespace Harrisonratcliffe\IpApiLaravel\Console;
 
-use Harrisonratcliffe\IpApiLaravel\IpApiLaravel;
 use Exception;
+use Harrisonratcliffe\IpApiLaravel\IpApiLaravel;
 use Illuminate\Console\Command;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;

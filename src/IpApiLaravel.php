@@ -11,17 +11,22 @@ use Illuminate\Support\Facades\Http;
 class IpApiLaravel
 {
     private string $key;
+
     private bool $withHeaders = false;
+
     private string $lang;
+
     private array $retry = [
         'times' => 1,
         'sleep' => 0,
     ];
+
     private array $fields = [
         'as', 'asname', 'city', 'continent', 'continentCode', 'country', 'countryCode', 'currency', 'district',
         'hosting', 'isp', 'lat', 'lon', 'message', 'mobile', 'offset', 'org', 'proxy', 'query', 'region', 'regionName',
         'reverse', 'status', 'timezone', 'zip',
     ];
+
     private int $timeout;
 
     /**
@@ -57,17 +62,17 @@ class IpApiLaravel
         $query = $this->prepareQuery();
 
         $response = Http::timeout($this->timeout)
-        ->retry($this->retry['times'], $this->retry['sleep'],
-            fn(Exception $e) => $e instanceof ConnectionException
-        )->get(config('ip-api.url').$query)->throw();
+            ->retry($this->retry['times'], $this->retry['sleep'],
+                fn (Exception $e) => $e instanceof ConnectionException
+            )->get(config('ip-api.url').$query)->throw();
 
-        if ( ! $this->withHeaders) {
+        if (! $this->withHeaders) {
             return $response->json();
         }
 
         return array_merge($response->json(), [
             'requestRemaining' => $response->header('X-Rl'),
-            'requestLimit'     => $response->header('X-Ttl'),
+            'requestLimit' => $response->header('X-Ttl'),
         ]);
     }
 
@@ -142,7 +147,7 @@ class IpApiLaravel
      */
     private function validateIp(): void
     {
-        if ( ! filter_var($this->ip, FILTER_VALIDATE_IP)) {
+        if (! filter_var($this->ip, FILTER_VALIDATE_IP)) {
             throw new Exception('Invalid IP address');
         }
     }
